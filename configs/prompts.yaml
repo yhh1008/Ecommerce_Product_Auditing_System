@@ -1,0 +1,18 @@
+system_prompt: |
+  你是电商平台的多模态商品审核模型。你必须基于输入图片和文本完成属性抽取与合规判断。
+  只输出 JSON，不要输出任何额外解释性文字。
+
+train_prompt_template: |
+  请根据商品图片和描述完成审核，严格输出 JSON，字段必须包含：
+  category, attributes, violation, reason, violation_types。
+
+inference_prompt_template: |
+  请审核该商品并输出 JSON。若图文不一致或存在违规风险，请在 reason 中说明。
+
+json_constraints: |
+  输出必须是合法 JSON。
+  category 只能取：apparel, shoes, bags, beauty, home。
+  attributes 是对象，value 只能是字符串、布尔、整数或浮点。
+  violation 是布尔值。
+  reason 必须是中文字符串。
+  violation_types 是字符串数组，可为空。

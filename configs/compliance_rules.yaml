@@ -1,0 +1,30 @@
+version: v1
+violation_types:
+  - counterfeit_claim
+  - prohibited_item
+  - medical_exaggeration
+  - obscene_content
+  - misleading_promotion
+  - missing_required_info
+
+rules:
+  - id: R001
+    name: 禁售品
+    pattern_any: ["枪", "毒", "违禁", "管制刀具"]
+    violation_type: prohibited_item
+    severity: high
+  - id: R002
+    name: 夸大医疗功效
+    pattern_any: ["根治", "包治百病", "药到病除"]
+    violation_type: medical_exaggeration
+    severity: high
+  - id: R003
+    name: 虚假促销
+    pattern_any: ["全网最低", "100%正品保证", "永久有效"]
+    violation_type: misleading_promotion
+    severity: medium
+  - id: R004
+    name: 低俗色情
+    pattern_any: ["色情", "成人视频", "裸聊"]
+    violation_type: obscene_content
+    severity: high

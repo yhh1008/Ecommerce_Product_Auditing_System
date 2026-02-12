@@ -1,0 +1,18 @@
+categories:
+  apparel:
+    display_name: 服饰
+    attributes_whitelist: [color, material, size, pattern, gender]
+  shoes:
+    display_name: 鞋靴
+    attributes_whitelist: [color, material, size, heel_type, closure]
+  bags:
+    display_name: 箱包
+    attributes_whitelist: [color, material, capacity, style, closure]
+  beauty:
+    display_name: 美妆
+    attributes_whitelist: [color, effect, skin_type, volume_ml, scent]
+  home:
+    display_name: 家居
+    attributes_whitelist: [color, material, dimensions, style, room]
+
+allowed_attribute_value_types: [str, bool, int, float]

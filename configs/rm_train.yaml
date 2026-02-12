@@ -1,0 +1,11 @@
+project_name: vlm_rm_ecommerce
+model_id: ${HDFS_ROOT}/model/Qwen3-VL-2B-Instruct
+train_files: ${HOME}/data/vlm_ecommerce_pref/train.parquet
+val_files: ${HOME}/data/vlm_ecommerce_pref/val.parquet
+learning_rate: 1e-5
+weight_decay: 0.01
+train_batch_size: 16
+eval_batch_size: 16
+gradient_accumulation_steps: 2
+total_epochs: 2
+max_length: 1536

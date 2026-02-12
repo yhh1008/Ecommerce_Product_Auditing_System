@@ -1,0 +1,14 @@
+project_name: vlm_sft_ecommerce
+backend: fsdp
+model_id: ${HDFS_ROOT}/model/Qwen3-VL-2B-Instruct
+train_files: ${HOME}/data/vlm_ecommerce_sft/train.parquet
+val_files: ${HOME}/data/vlm_ecommerce_sft/val.parquet
+num_trainers: 8
+micro_batch_size_per_gpu: 2
+max_prompt_length: 1024
+max_response_length: 512
+total_epochs: 3
+freeze_vision_encoder: true
+freeze_vision_projection: true
+optim_lr: 2e-5
+save_freq: 2000

@@ -1,0 +1,13 @@
+project_name: vlm_grpo_ecommerce
+base_sft_ckpt: ${HOME}/outputs/sft/latest
+train_files: ${HOME}/data/vlm_ecommerce_pref/train.parquet
+val_files: ${HOME}/data/vlm_ecommerce_pref/val.parquet
+train_batch_size: 256
+max_prompt_length: 1024
+max_response_length: 512
+kl_coef: 0.02
+entropy_coeff: 0.0
+rollout_n: 4
+total_epochs: 8
+save_freq: 10
+test_freq: 5
